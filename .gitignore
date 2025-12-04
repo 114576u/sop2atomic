@@ -29,6 +29,12 @@ env/
 ENV/
 *.env
 
+# Never commit environment files
+.env
+*.env
+.env.*
+
+
 # Jupyter notebooks
 .ipynb_checkpoints/
 
