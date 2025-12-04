@@ -1,0 +1,60 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+      - master
+      - feature/**
+  pull_request:
+    branches:
+      - main
+      - master
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1) Check out the repository code
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # 2) Set up Python
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+
+      # 3) Install project + dev dependencies
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e .
+          pip install -r requirements-dev.txt
+
+      # 4) Lint with Ruff
+      - name: Run Ruff (lint)
+        run: |
+          ruff check src tests
+
+      # 5) Check formatting with Black (no changes, just check)
+      - name: Run Black (format check)
+        run: |
+          black --check src tests
+
+      # 6) (Optional) Static type checking with MyPy
+      - name: Run MyPy (type checking)
+        run: |
+          mypy src/sop2atomic || true
+
+      # 7) Run tests with pytest
+      - name: Run tests with pytest
+        run: |
+          pytest
+
+      # 8) (Optional) Measure coverage
+      - name: Coverage report
+        run: |
+          coverage run -m pytest
+          coverage report
