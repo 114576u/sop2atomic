@@ -40,5 +40,7 @@ addopts = "-q"
 testpaths = ["tests"]
 
 [tool.ruff]
-select = ["E", "F", "W"]
 line-length = 88
+
+[tool.ruff.lint]
+select = ["E", "F", "W"]

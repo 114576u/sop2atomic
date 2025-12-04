@@ -32,7 +32,11 @@ def load_atomic_catalogue(path: str) -> List[Dict[str, Any]]:
 
     for _, row in df.iterrows():
         params_raw = str(row.get("Parameters", "") or "")
-        params = [p.strip() for p in params_raw.replace(",", "\n").split("\n") if p.strip()]
+        params = [
+            p.strip()
+            for p in params_raw.replace(",", "\n").split("\n")
+            if p.strip()
+        ]
 
         components.append(
             {
