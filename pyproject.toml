@@ -1,0 +1,44 @@
+[project]
+name = "sop2atomic"
+version = "0.1.0"
+description = "A Python toolkit that converts SOP documents into structured atomic workflow actions using OpenAI models."
+readme = "README.md"
+authors = [
+    { name = "UST Reporting Automation" }
+]
+
+# Python version policy for enterprise environments
+requires-python = ">=3.10"
+
+dependencies = [
+    "openai>=1.0.0",
+    "python-docx>=1.0.0",
+    "pandas>=1.5.0",
+]
+
+# CLI entry point (allows running `sop2atomic` directly in terminal)
+[project.scripts]
+sop2atomic = "sop2atomic.cli.main:main"
+
+# Build configuration (modern setuptools backend)
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+# Optional development tools (recommended)
+[tool.black]
+line-length = 88
+target-version = ["py310"]
+
+[tool.isort]
+profile = "black"
+line_length = 88
+
+[tool.pytest.ini_options]
+minversion = "7.0"
+addopts = "-q"
+testpaths = ["tests"]
+
+[tool.ruff]
+select = ["E", "F", "W"]
+line-length = 88
