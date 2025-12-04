@@ -1,0 +1,14 @@
+# Testing
+pytest>=7.0
+
+# Linting & static analysis
+ruff>=0.2.0
+
+# Formatting
+black>=24.0.0
+
+# Type checking (optional but recommended)
+mypy>=1.0
+
+# Code coverage tools (optional for CI pipelines)
+coverage>=7.0
