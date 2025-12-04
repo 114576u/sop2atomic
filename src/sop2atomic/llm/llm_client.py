@@ -6,10 +6,7 @@ LLMClient is typically monkeypatched with a fake implementation.
 """
 
 import os
-from typing import Dict, Any
-
 from openai import OpenAI
-
 from sop2atomic.llm.prompt_builder import build_system_prompt
 
 
@@ -40,7 +37,7 @@ class LLMClient:
             temperature=0.1,
         )
 
-        # Depending on the exact SDK version, the path to the content may differ slightly.
+        # Depending on the exact SDK version, the path to the content may differ.
         # For the current Responses API, the JSON payload is returned as text content.
         #
         # Here we assume a structure like:
