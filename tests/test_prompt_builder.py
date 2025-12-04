@@ -7,11 +7,11 @@ def test_build_system_prompt_contains_json_schema_keywords():
 
     # Basic sanity checks: important keywords and structure
     assert "STRICT JSON" in system_prompt
-    assert "\"sop_id\"" in system_prompt
-    assert "\"steps\"" in system_prompt
-    assert "\"atomic_actions\"" in system_prompt
-    assert "\"component_id\"" in system_prompt
-    assert "\"parameters\"" in system_prompt
+    assert '"sop_id"' in system_prompt
+    assert '"steps"' in system_prompt
+    assert '"atomic_actions"' in system_prompt
+    assert '"component_id"' in system_prompt
+    assert '"parameters"' in system_prompt
 
 
 def test_build_user_prompt_includes_sop_card_and_steps():

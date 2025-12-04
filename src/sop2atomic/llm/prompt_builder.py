@@ -25,22 +25,22 @@ def build_system_prompt() -> str:
         "- For each atomic action, choose EXACTLY ONE component from the catalogue.\n"
         "- Fill parameter values when they can be inferred from the SOP. If unknown, "
         "set the value to null.\n"
-        "- If no component fits, use component_id = null and component_name = \"MISSING"
-        "_COMPONENT\" and describe what is needed.\n\n"
+        '- If no component fits, use component_id = null and component_name = "MISSING'
+        '_COMPONENT" and describe what is needed.\n\n'
         "You MUST output STRICT JSON with this schema, and nothing else:\n"
         "{\n"
-        '  \"sop_id\": string | null,\n'
-        '  \"steps\": [\n'
+        '  "sop_id": string | null,\n'
+        '  "steps": [\n'
         "    {\n"
-        '      \"step_number\": string,\n'
-        '      \"original_action\": string,\n'
-        '      \"notes\": string,\n'
-        '      \"atomic_actions\": [\n'
+        '      "step_number": string,\n'
+        '      "original_action": string,\n'
+        '      "notes": string,\n'
+        '      "atomic_actions": [\n'
         "        {\n"
-        '          \"component_id\": string | null,\n'
-        '          \"component_name\": string,\n'
-        '          \"category\": string | null,\n'
-        '          \"parameters\": { string: string | null }\n'
+        '          "component_id": string | null,\n'
+        '          "component_name": string,\n'
+        '          "category": string | null,\n'
+        '          "parameters": { string: string | null }\n'
         "        }\n"
         "      ]\n"
         "    }\n"
