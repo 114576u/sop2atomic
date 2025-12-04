@@ -33,7 +33,6 @@ class LLMClient:
             model=self.model,
             instructions=build_system_prompt(),
             input=[{"role": "user", "content": user_prompt}],
-            response_format={"type": "json_object"},
             temperature=0.1,
         )
 
