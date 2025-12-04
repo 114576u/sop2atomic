@@ -40,9 +40,7 @@ def load_atomic_catalogue(path: str) -> List[Dict[str, Any]]:
             params_raw = str(raw_value)
 
         params = [
-            p.strip()
-            for p in params_raw.replace(",", "\n").split("\n")
-            if p.strip()
+            p.strip() for p in params_raw.replace(",", "\n").split("\n") if p.strip()
         ]
 
         components.append(

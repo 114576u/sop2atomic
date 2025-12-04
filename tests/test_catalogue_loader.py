@@ -18,11 +18,12 @@ def _create_test_catalogue(path: Path) -> None:
             "Define To/Cc/Bcc addresses",
             "Confirm that a required file is available",
         ],
-        # Parameters can be separated by newlines or commas; the loader should handle both.
+        # Parameters can be separated by newlines or commas;
+        # the loader should handle both.
         "Parameters": [
-            "path",                 # single parameter
-            "to\ncc\nbcc",          # multi-line style
-            "",                     # no parameters
+            "path",  # single parameter
+            "to\ncc\nbcc",  # multi-line style
+            "",  # no parameters
         ],
     }
     df = pd.DataFrame(data)
