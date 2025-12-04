@@ -79,6 +79,7 @@ logs/
 
 # Example outputs
 examples/*.json
+examples/
 
 # LLM intermediate dumps (if any)
 *.tmp
