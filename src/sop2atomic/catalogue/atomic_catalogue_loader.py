@@ -3,7 +3,7 @@ Loader for the Atomic Components Catalogue (.xlsx).
 
 Reads an Excel file and converts each atomic component into a dict:
 {
-    "id": "1,1",
+    "id": "1_1",
     "id_name": "OPEN_FOLDER",
     "category": "Files & Folders",
     "description": "Open a local or network folder",
